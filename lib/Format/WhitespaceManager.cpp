@@ -377,7 +377,7 @@ static unsigned AlignTokens(const FormatStyle &Style, F &&Matches,
       EndOfSequence = i;
       // If there is a blank line, or if the last line didn't contain any
       // matching token, the sequence ends here.
-      if (Changes[i].NewlinesBefore > 1 || !FoundMatchOnLine)
+      if (Changes[i].NewlinesBefore > 2 || !FoundMatchOnLine)
         AlignCurrentSequence();
 
       FoundMatchOnLine = false;
