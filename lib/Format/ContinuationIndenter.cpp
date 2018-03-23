@@ -1209,6 +1209,7 @@ void ContinuationIndenter::moveStatePastScopeOpener(LineState &State,
                       (NextNoComment &&
                        NextNoComment->isOneOf(TT_DesignatedInitializerPeriod,
                                               TT_DesignatedInitializerLSquare));
+    AvoidBinPacking = AvoidBinPacking && (!Current.isOneOf(tok::l_brace, TT_ArrayInitializerLSquare));
     BreakBeforeParameter = EndsInComma;
     if (Current.ParameterCount > 1)
       NestedBlockIndent = std::max(NestedBlockIndent, State.Column + 1);
